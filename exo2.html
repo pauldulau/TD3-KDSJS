@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>Exo 2</title>
+    <script src="jquery-3.2.1.min.js"></script>
+    <script>
+      (function($)
+      {
+        $.fn.big = function()
+        {
+          this.each(function()
+          {
+            $(this).hover(
+              function()
+              {
+                $(this).css("font-size", "110%")
+              },
+              function()
+              {
+                $(this).css("font-size", "")
+              }
+            );
+          });
+          return this;
+        }
+      })(jQuery);
+
+      $(document).ready(function()
+      {
+        $("p").big();
+      });
+    </script>
+  </head>
+  <body>
+    <p>Même si on se ment, si vraiment tu veux te rappeler des souvenirs de ton perroquet, c'est juste une question d'awareness parce que spirituellement, on est tous ensemble, ok ? Mais ça, c'est uniquement lié au spirit.
+       Même si on se ment, si vraiment tu veux te rappeler des souvenirs de ton perroquet, il y a de bonnes règles, de bonnes rules car l'aboutissement de l'instinct, c'est l'amour ! Donc on n'est jamais seul spirituellement</p>
+    <p>Même si on se ment, si vraiment tu veux te rappeler des souvenirs de ton perroquet, c'est juste une question d'awareness parce que spirituellement, on est tous ensemble, ok ? Mais ça, c'est uniquement lié au spirit.
+       Même si on se ment, si vraiment tu veux te rappeler des souvenirs de ton perroquet, il y a de bonnes règles, de bonnes rules car l'aboutissement de l'instinct, c'est l'amour ! Donc on n'est jamais seul spirituellement</p>
+    <p>Même si on se ment, si vraiment tu veux te rappeler des souvenirs de ton perroquet, c'est juste une question d'awareness parce que spirituellement, on est tous ensemble, ok ? Mais ça, c'est uniquement lié au spirit.
+       Même si on se ment, si vraiment tu veux te rappeler des souvenirs de ton perroquet, il y a de bonnes règles, de bonnes rules car l'aboutissement de l'instinct, c'est l'amour ! Donc on n'est jamais seul spirituellement</p>
+
+  </body>
+</html>

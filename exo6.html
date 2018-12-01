@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>Exo 6</title>
+    <style>
+      input.ng-valid.ng-touched { background-color: #b2ffb2 }
+      input.ng-invalid.ng-touched { background-color: #ffb2b2 }
+    </style>
+    <script src="angular.min.js"></script>
+  </head>
+  <body>
+    <div ng-app="FormApp" ng-controller="FormController">
+      <form name="form">
+        <p>Nom : <input type="text" ng-model="name" required></p>
+        <p>Age : <input type="number" min="14" ng-model="age" required></p>
+        <p>Email: <input type="email" ng-model="email" required></p>
+        <p>Êtes vous sûr(e) ? <input type="checkbox" ng-model="validate"></p>
+        <input type="submit" value="Valider">
+        <div ng-show="form.$submitted">
+          <p ng-show="!validate">❌ Veuillez valider ❌</p>
+          <p ng-show="validate">✅🎉 Félicitations ! 🎉✅</p>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      var app = angular.module("FormApp", []);
+      app.controller("FormController", function($scope)
+      { });
+    </script>
+  </body>
+</html>

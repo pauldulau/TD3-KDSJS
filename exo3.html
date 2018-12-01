@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>Exo 3</title>
+    <script src="angular.min.js"></script>
+  </head>
+  <body>
+    <div ng-app="">
+      <p>Nom : <input type="text" ng-model="name"></p>
+      <p ng-bind="name"></p>
+
+      <p>Couleur : <input type="text" ng-model="color" style="background-color:{{color}}"></p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>Exo 5</title>
+    <script src="angular.min.js"></script>
+  </head>
+  <body>
+    <p>Liste des Pokemons : </p>
+    <div ng-app="PokeApp" ng-controller="PokeController">
+      <ul>
+        <li ng-repeat="pokemon in pokemons">{{ pokemon.ename }}</li>
+      </ul>
+    </div>
+
+    <script>
+      var app = angular.module("PokeApp", []);
+      app.controller("PokeController", function($range, $http)
+      {
+        $range.pokemons = [];
+        $http.get("https://raw.githubusercontent.com/fanzeyi/Pokemon-DB/master/pokedex.json").then(function(answer)
+        {
+          if (answer.status == 200) {
+            $range.pokemons = answer.data;
+          }
+        })
+      });
+    </script>
+  </body>
+</html>

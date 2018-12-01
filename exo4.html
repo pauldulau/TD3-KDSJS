@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>Exo 4</title>
+    <script src="angular.min.js"></script>
+  </head>
+  <body>
+    <div ng-app="app01" ng-controller="controlleur001">
+      <p>Veuillez entrer 2 valeurs et choisir un opération à effectuer</p>
+      <input type="text" ng-model="nb1">
+      <input type="text" ng-model="nb2">
+      <select ng-model="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+      </select>
+      <p>{{ calculer() }}</p>
+    </div>
+
+    <script>
+      var app = angular.module("app01", []);
+      app.controller("controlleur001", function($scope)
+      {
+        $scope.operator = "+";
+        $scope.calculer = function()
+        {
+          if (!this.nb1 || !this.nb2)
+          {
+            return "Les valeurs entrées ne sont pas des nombres";
+          }
+          var result = 0;
+          switch (this.operator)
+          {
+            case "+":
+              result = parseInt(this.nb1) + parseInt(this.nb2);
+              break;
+            case "-":
+              result = parseInt(this.nb1) - parseInt(this.nb2);
+              break;
+            case "*":
+              result = parseInt(this.nb1) * parseInt(this.nb2);
+              break;
+            case "/":
+              result = parseInt(this.nb1) / parseInt(this.nb2);
+              break;
+          }
+          return `Le résultat du calcul ${this.nb1} ${this.operator} ${this.nb2} est ${result}`;
+        }
+      });
+    </script>
+  </body>
+</html>
